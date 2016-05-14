@@ -13,6 +13,9 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'figaro'
+  gem 'rails-erd'
+  gem "administrate-field-image"
 end
 gem 'administrate'
 gem 'bootstrap-sass'
