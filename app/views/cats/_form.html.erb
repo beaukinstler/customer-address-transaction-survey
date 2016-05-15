@@ -1,0 +1,22 @@
+<%= simple_form_for(@cat) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :before_street %>
+    <%= f.input :before_city %>
+    <%= f.input :before_state %>
+    <%= f.input :before_zip %>
+    <%= f.input :before_type %>
+    <%= f.input :after_street %>
+    <%= f.input :after_city %>
+    <%= f.input :after_state %>
+    <%= f.input :after_zip %>
+    <%= f.input :after_type %>
+    <%= f.input :location_prompting_visit %>
+    <%= f.input :amount_spent_today %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

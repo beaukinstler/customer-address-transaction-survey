@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :cats
+  resources :question_sets
+  resources :surveys
   namespace :admin do
     resources :users
     root to: "users#index"

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  before_street: MyString
+  before_city: MyString
+  before_state: MyString
+  before_zip: MyString
+  before_type: 1
+  after_street: MyString
+  after_city: MyString
+  after_state: MyString
+  after_zip: 1
+  after_type: 1
+  location_prompting_visit: 1
+  amount_spent_today: 1
+
+two:
+  before_street: MyString
+  before_city: MyString
+  before_state: MyString
+  before_zip: MyString
+  before_type: 1
+  after_street: MyString
+  after_city: MyString
+  after_state: MyString
+  after_zip: 1
+  after_type: 1
+  location_prompting_visit: 1
+  amount_spent_today: 1
