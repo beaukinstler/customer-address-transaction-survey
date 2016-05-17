@@ -10,6 +10,7 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    @cats = @survey.cats.all
   end
 
   # GET /surveys/new

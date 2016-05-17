@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
 <p>
   <strong>Name:</strong>
@@ -13,6 +13,10 @@
 <p>
   <strong>Source:</strong>
   <%= @survey.source %>
+</p>
+
+<p>
+  <%= render 'survey_cats' %>
 </p>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |

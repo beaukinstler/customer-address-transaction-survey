@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  resources :cats
   resources :question_sets
-  resources :surveys
+  resources :surveys do
+    resources :cats do
+    end
+  end
+
   namespace :admin do
     resources :users
     root to: "users#index"
   end
-  root to: 'visitors#index'
+  root to: 'surveys#index'
   devise_for :users
   resources :users
 end

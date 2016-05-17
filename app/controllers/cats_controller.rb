@@ -4,35 +4,43 @@ class CatsController < ApplicationController
   # GET /cats
   # GET /cats.json
   def index
-    @cats = Cat.all
+    @survey = Survey.find(params[:survey_id])
+    @cats = @survey.cats.all
+    # @cats = Cat.all
   end
 
   # GET /cats/1
   # GET /cats/1.json
   def show
+    @survey = Survey.find(params[:survey_id])
+    @cat = @survey.cats.build
   end
 
   # GET /cats/new
   def new
-    @cat = Cat.new
+    @survey = Survey.find(params[:survey_id])
+    @cat = @survey.cats.new
   end
 
   # GET /cats/1/edit
   def edit
+    @survey = Survey.find(params[:survey_id])
+    @cat = @survey.cats.find(params[:id])
   end
 
   # POST /cats
   # POST /cats.json
   def create
-    @cat = Cat.new(cat_params)
-
+    @survey = Survey.find(params[:survey_id])
+    @cat = @survey.cats.new(cat_params)
+    debugger
     respond_to do |format|
       if @cat.save
-        format.html { redirect_to @cat, notice: 'Cat was successfully created.' }
+        format.html { redirect_to survey_cats_path, notice: 'Cat was successfully created.' }
         format.json { render :show, status: :created, location: @cat }
       else
         format.html { render :new }
-        format.json { render json: @cat.errors, status: :unprocessable_entity }
+        format.json { render json: survey_cats_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,13 +48,15 @@ class CatsController < ApplicationController
   # PATCH/PUT /cats/1
   # PATCH/PUT /cats/1.json
   def update
+    @survey = Survey.find(params[:survey_id])
+    @cat = @survey.cats.find(params[:id])
     respond_to do |format|
       if @cat.update(cat_params)
-        format.html { redirect_to @cat, notice: 'Cat was successfully updated.' }
+        format.html { redirect_to survey_path(@survey), notice: 'CAT was successfully updated.' }
         format.json { render :show, status: :ok, location: @cat }
       else
         format.html { render :edit }
-        format.json { render json: @cat.errors, status: :unprocessable_entity }
+        format.json { render json: survey_cats_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +66,7 @@ class CatsController < ApplicationController
   def destroy
     @cat.destroy
     respond_to do |format|
-      format.html { redirect_to cats_url, notice: 'Cat was successfully destroyed.' }
+      format.html { redirect_to survey_cats_path, notice: 'Cat was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +74,8 @@ class CatsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cat
-      @cat = Cat.find(params[:id])
+      @survey = Survey.find(params[:survey_id])
+      @cat = @survey.cats.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

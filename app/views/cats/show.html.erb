@@ -60,5 +60,5 @@
   <%= @cat.amount_spent_today %>
 </p>
 
-<%= link_to 'Edit', edit_cat_path(@cat) %> |
-<%= link_to 'Back', cats_path %>
+<%= link_to 'Edit', [:edit, @survey, @cat] %> |
+<%= link_to 'Back', survey_cats_path %>
