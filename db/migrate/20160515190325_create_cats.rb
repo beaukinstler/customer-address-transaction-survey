@@ -5,12 +5,12 @@ class CreateCats < ActiveRecord::Migration
       t.string :before_city
       t.string :before_state
       t.string :before_zip
-      t.integer :before_type
+      t.belongs_to :before_type
       t.string :after_street
       t.string :after_city
       t.string :after_state
       t.integer :after_zip
-      t.integer :after_type
+      t.belongs_to :after_type
       t.integer :location_prompting_visit
       t.integer :amount_spent_today
 

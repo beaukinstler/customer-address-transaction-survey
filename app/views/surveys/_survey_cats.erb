@@ -26,17 +26,17 @@
         <td><%= cat.before_city %></td>
         <td><%= cat.before_state %></td>
         <td><%= cat.before_zip %></td>
-        <td><%= cat.before_type %></td>
+        <td><%= cat.before_type.description %></td>
         <td><%= cat.after_street %></td>
         <td><%= cat.after_city %></td>
         <td><%= cat.after_state %></td>
         <td><%= cat.after_zip %></td>
-        <td><%= cat.after_type %></td>
+        <td><%= cat.after_type.description %></td>
         <td><%= cat.location_prompting_visit %></td>
         <td><%= cat.amount_spent_today %></td>
-        <td><%= link_to 'Show', [@survey, @cat] %> </td>
+        <td><%= link_to 'Show', survey_cat_path(cat.survey_id,cat.id)%> </td>
         <td><%= link_to 'Edit', edit_survey_cat_path(cat.survey_id,cat.id)%></td>
-        <td><%= link_to 'Destroy', [@survey, @cat] , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', survey_cat_path(cat.survey_id,cat.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

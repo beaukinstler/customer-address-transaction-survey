@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515193650) do
+ActiveRecord::Schema.define(version: 20160519020404) do
 
   create_table "cats", force: :cascade do |t|
     t.string   "before_street"
     t.string   "before_city"
     t.string   "before_state"
     t.string   "before_zip"
-    t.integer  "before_type"
+    t.integer  "before_type_id"
     t.string   "after_street"
     t.string   "after_city"
     t.string   "after_state"
     t.integer  "after_zip"
-    t.integer  "after_type"
+    t.integer  "after_type_id"
     t.integer  "location_prompting_visit"
     t.integer  "amount_spent_today"
     t.datetime "created_at",               null: false
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20160515193650) do
 
   add_index "cats", ["survey_id"], name: "index_cats_on_survey_id"
   add_index "cats", ["user_id"], name: "index_cats_on_user_id"
+
+  create_table "location_types", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "question_sets", force: :cascade do |t|
     t.string   "name"

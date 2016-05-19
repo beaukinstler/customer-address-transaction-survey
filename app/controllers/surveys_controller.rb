@@ -1,10 +1,13 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
 
   # GET /surveys
   # GET /surveys.json
   def index
     @surveys = Survey.all
+    @user = current_user
   end
 
   # GET /surveys/1

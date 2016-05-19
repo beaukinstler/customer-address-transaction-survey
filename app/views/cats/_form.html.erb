@@ -14,7 +14,7 @@
     <%= f.input :before_zip %>
     <div class="form-group">
       <%= f.label :before_type %> <br>
-      <%= f.select(:before_type,[:H,:W,:S,:SCHOOL,:O] ,{prompt: 'Select before type'} )%>
+      <%= f.collection_select(:before_type_id, LocationType.all , :id, :description ,{prompt: 'Select before type'  , selected: 1 })%>
     </div>
     <%= f.input :after_street %>
     <%= f.input :after_city %>
@@ -25,11 +25,11 @@
     <%= f.input :after_zip %>
     <div class="form-group">
       <%= f.label :after_type %> <br>
-      <%= f.select(:after_type,[:H,:W,:S,:SCHOOL,:O] ,{prompt: 'Select after type'} )%>
+      <%= f.collection_select(:after_type_id, LocationType.all , :id, :description ,{prompt: 'Select after type', selected: 1 })%>
     </div>
     <div class="form-group">
       <%= f.label :location_prompting_visit %> <br>
-      <%= f.select(:location_prompting_visit, [['Before',:before],['After',:after], ['Both', :both]]) %>
+      <%= f.select(:location_prompting_visit, [['Before',:before],['After',:after], ['Both', :both]],{prompt: 'Which location prompted the visit today?', error: 'Mandatory'  }) %>
     </div>
     <%= f.input :amount_spent_today %>
   </div>
