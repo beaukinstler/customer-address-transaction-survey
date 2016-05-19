@@ -88,3 +88,5 @@ pickle-email-*.html
 
 # output of the erd gem for diagraming the data model into PDF
 erd.pdf
+
+.byebug_history

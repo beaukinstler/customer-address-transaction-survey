@@ -35,7 +35,7 @@
         <td><%= cat.location_prompting_visit %></td>
         <td><%= cat.amount_spent_today %></td>
         <td><%= link_to 'Show', [@survey, @cat] %> </td>
-        <td><%= link_to 'Edit', [:edit, @cat, @survey] %></td>
+        <td><%= link_to 'Edit', edit_survey_cat_path(cat.survey_id,cat.id)%></td>
         <td><%= link_to 'Destroy', [@survey, @cat] , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

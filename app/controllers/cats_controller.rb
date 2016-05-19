@@ -13,7 +13,7 @@ class CatsController < ApplicationController
   # GET /cats/1.json
   def show
     @survey = Survey.find(params[:survey_id])
-    @cat = @survey.cats.build
+    @cat = @survey.cats.find(params[:id])
   end
 
   # GET /cats/new
