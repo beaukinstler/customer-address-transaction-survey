@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'byebug'
+  gem 'foreman'
 end
 group :development do
   gem 'web-console', '~> 2.0'
@@ -26,7 +27,6 @@ gem 'pundit'
 gem 'simple_form'
 group :development do
   gem 'better_errors'
-  gem 'foreman'
   gem 'quiet_assets'
   gem 'rails_layout'
 end

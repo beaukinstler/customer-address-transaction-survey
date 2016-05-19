@@ -28,8 +28,8 @@
       <%= f.collection_select(:after_type_id, LocationType.all , :id, :description ,{prompt: 'Select after type', selected: 1 })%>
     </div>
     <div class="form-group">
-      <%= f.label :location_prompting_visit %> <br>
-      <%= f.select(:location_prompting_visit, [['Before',:before],['After',:after], ['Both', :both]],{prompt: 'Which location prompted the visit today?', error: 'Mandatory'  }) %>
+      <%= f.label "Which location (before,after, or both) prompted your visit today?" %> <br>
+      <%= f.select(:location_prompting_visit, [['Before',:before],['After',:after], ['Both', :both]],{ error: 'Mandatory'  }) %>
     </div>
     <%= f.input :amount_spent_today %>
   </div>
