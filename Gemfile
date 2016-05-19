@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem "administrate-field-image"
 group :development, :test do
   gem 'byebug'
   gem 'foreman'
@@ -16,7 +17,7 @@ group :development do
   gem 'spring'
   gem 'figaro'
   gem 'rails-erd'
-  gem "administrate-field-image"
+
 
 end
 gem 'administrate'
