@@ -8,6 +8,7 @@
 <% if user_signed_in? %>
   <% if !current_user.try(:user?) %>
     <li><%= link_to 'CAT Surveys', surveys_path %></li>
+    <li><%= link_to 'Instructions for Surveyors', '/pages/instructions' %></li>
   <% end %>
 
   <% if current_user.try(:admin?) %>
