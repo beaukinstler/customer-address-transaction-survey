@@ -1,5 +1,10 @@
 <table class="table table-bordered table-striped">
   <thead>
+    <p>
+      Download:
+      <%= link_to "CSV", survey_cats_path(@survey,format: "csv") %> |
+      <%= link_to "Excel", survey_cats_path(@survey,format: "xls") %>
+    </p>
     <tr>
       <th>ID</th>
       <th>Before street</th>

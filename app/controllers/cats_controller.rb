@@ -8,6 +8,11 @@ class CatsController < ApplicationController
   def index
     @survey = Survey.find(params[:survey_id])
     @cats = @survey.cats.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @cats.to_csv }
+      format.xls # { send_data @cats.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /cats/1
