@@ -8,3 +8,6 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+LocationType.create([{ description: 'Home'} ,{ description: 'Work'} , { description: 'Shopping'}, {description: 'School'}, {description: 'Other'}])
+puts 'CREATED location_types'

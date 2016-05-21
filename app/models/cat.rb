@@ -10,10 +10,10 @@ class Cat < ActiveRecord::Base
     validates :before_street, presence: true
     validates :before_city, presence: true
     validates :before_state, presence: true
-    validates :before_zip, presence: true, format: { with: /\d{5}(?:[-\s]\d{4})?/, message: "Must be a zip code, Use 99999 to look up later" }
+    validates :before_zip, presence: true, format: { with: /\A\d{5}(-\d{4})?\z/, message: "Must be a zip code, Use 99999 to look up later" }
     validates :after_city, presence: true
     validates :after_state, presence: true
-    validates :after_zip, presence: true, format: { with: /\d{5}(?:[-\s]\d{4})?/, message: "Must be a zip code.  Use 99999 to look up later" }
+    validates :after_zip, presence: true, format: { with: /\A\d{5}(-\d{4})?\z/, message: "Must be a zip code.  Use 99999 to look up later" }
     validates :before_type_id, presence: true
     validates :location_prompting_visit, presence: true
     private

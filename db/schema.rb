@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519020404) do
+ActiveRecord::Schema.define(version: 20160521043418) do
 
   create_table "cats", force: :cascade do |t|
     t.string   "before_street"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160519020404) do
     t.string   "after_street"
     t.string   "after_city"
     t.string   "after_state"
-    t.integer  "after_zip"
+    t.string   "after_zip"
     t.integer  "after_type_id"
     t.integer  "location_prompting_visit"
     t.integer  "amount_spent_today"
