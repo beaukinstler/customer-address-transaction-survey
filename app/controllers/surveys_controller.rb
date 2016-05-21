@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_role
 
 
   # GET /surveys
@@ -75,4 +76,11 @@ class SurveysController < ApplicationController
     def survey_params
       params.require(:survey).permit(:name, :description, :source)
     end
+
+  def check_role
+    if current_user.user?
+      redirect_to '/pages/about', notice: 'You must be authorized to use the CAT surveys'
+    end
+  end
+
 end

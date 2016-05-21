@@ -16,6 +16,7 @@ class Cat < ActiveRecord::Base
     validates :after_zip, presence: true, format: { with: /\A\d{5}(-\d{4})?\z/, message: "Must be a zip code.  Use 99999 to look up later" }
     validates :before_type_id, presence: true
     validates :location_prompting_visit, presence: true
+    validates :amount_spent_today, presence: true
     private
 
         def validate_card

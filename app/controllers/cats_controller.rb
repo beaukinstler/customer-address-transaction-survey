@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_role
 
   # GET /cats
   # GET /cats.json
@@ -82,5 +83,11 @@ class CatsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_params
       params.require(:cat).permit(:before_street, :before_city, :before_state, :before_zip, :before_type_id, :after_street, :after_city, :after_state, :after_zip, :after_type_id, :location_prompting_visit, :amount_spent_today)
+    end
+
+    def check_role
+      if current_user.user?
+        redirect_to '/pages/about', notice: 'You must be authorized to use the CAT surveys'
+      end
     end
 end
