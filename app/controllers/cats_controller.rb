@@ -7,7 +7,6 @@ class CatsController < ApplicationController
   def index
     @survey = Survey.find(params[:survey_id])
     @cats = @survey.cats.all
-    # @cats = Cat.all
   end
 
   # GET /cats/1
