@@ -9,6 +9,14 @@ class SurveysController < ApplicationController
   def index
     @surveys = Survey.all
     @user = current_user
+    @cats = Cat.all
+    if @user.admin?
+      respond_to do |format|
+        format.html
+        format.csv { send_data @cats.to_csv }
+        format.xls # { send_data @cats.to_csv(col_sep: "\t") }
+      end
+    end
   end
 
   # GET /surveys/1
@@ -24,6 +32,9 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+    if !current_user.admin?
+      redirect_to root
+    end
   end
 
   # POST /surveys

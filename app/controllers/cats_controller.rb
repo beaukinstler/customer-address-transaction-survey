@@ -39,10 +39,11 @@ class CatsController < ApplicationController
   def create
     @survey = Survey.find(params[:survey_id])
     @cat = @survey.cats.new(cat_params)
+    @cat.user_id = current_user.id
     # debugger
     respond_to do |format|
       if @cat.save
-        format.html { redirect_to survey_path(@survey), notice: 'Cat was successfully created.' }
+        format.html { redirect_to new_survey_cat_path(@survey), notice: 'Cat was successfully created.' }
         format.json { render :show, status: :created, location: @cat }
       else
         format.html { render :new }
@@ -87,7 +88,7 @@ class CatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_params
-      params.require(:cat).permit(:before_street, :before_city, :before_state, :before_zip, :before_type_id, :after_street, :after_city, :after_state, :after_zip, :after_type_id, :location_prompting_visit, :amount_spent_today)
+      params.require(:cat).permit(:before_street, :before_city, :before_state, :before_zip, :before_type_id, :after_street, :after_city, :after_state, :after_zip, :after_type_id, :location_prompting_visit, :amount_spent_today, :user_id)
     end
 
     def check_role
