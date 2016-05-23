@@ -57,7 +57,7 @@ class CatsController < ApplicationController
   def update
     @survey = Survey.find(params[:survey_id])
     @cat = @survey.cats.find(params[:id])
-    @cat.user_id = current_user.id
+    # @cat.user_id = current_user.id
     # debugger
     respond_to do |format|
       if @cat.update(cat_params)
@@ -89,7 +89,7 @@ class CatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_params
-      params.require(:cat).permit(:before_street, :before_city, :before_state, :before_zip, :before_type_id, :after_street, :after_city, :after_state, :after_zip, :after_type_id, :location_prompting_visit, :amount_spent_today, :user_id, :note, :survey_id)
+      params.require(:cat).permit(:before_street, :before_city, :before_state, :before_zip, :before_type_id, :after_street, :after_city, :after_state, :after_zip, :after_type_id, :location_prompting_visit, :amount_spent_today, :user_id, :note)
     end
 
     def check_role
