@@ -23,6 +23,7 @@
       <th>Location prompting visit</th>
       <th>Amount spent today</th>
       <th>User</th>
+      <th>Note</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -44,6 +45,7 @@
         <td><%= cat.location_prompting_visit %></td>
         <td><%= cat.amount_spent_today %></td>
         <td><%= cat.user.email %></td>
+        <td><%= cat.note %></td>
         <td><%= link_to 'Show', survey_cat_path(cat.survey_id,cat.id)%> </td>
         <td><%= link_to 'Edit', edit_survey_cat_path(cat.survey_id,cat.id)%></td>
         <td><%= link_to 'Destroy', survey_cat_path(cat.survey_id,cat.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>

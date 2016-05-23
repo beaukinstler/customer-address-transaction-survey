@@ -23,6 +23,7 @@
         <Cell><Data ss:Type="String">User email</Data></Cell>
         <Cell><Data ss:Type="String">Survey location</Data></Cell>
         <Cell><Data ss:Type="String">Survey name</Data></Cell>
+        <Cell><Data ss:Type="String">Note</Data></Cell>
       </Row>
     <% @cats.each do |cat| %>
       <Row>
@@ -42,6 +43,7 @@
         <Cell><Data ss:Type="String"><%= cat.user.email %></Data></Cell>
         <Cell><Data ss:Type="String"><%= cat.survey.source %></Data></Cell>
         <Cell><Data ss:Type="String"><%= cat.survey.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= cat.note %></Data></Cell>
       </Row>
     <% end %>
     </Table>

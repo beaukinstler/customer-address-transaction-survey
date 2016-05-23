@@ -5,7 +5,7 @@
 
   <div class="form-inputs">
     <%= f.hidden_field :survey_id, :value=>params[:survey_id] %>
-    <%= f.hidden_field :user_id, :value=>@user%>
+    <%= f.hidden_field :user_id, :value=> @user%>
     <%= f.input :before_street %>
     <%= f.input :before_city %>
     <div class="form-group">
@@ -33,6 +33,7 @@
       <%= f.select(:location_prompting_visit, [['Before',:before],['After',:after], ['Both', :both]],{ error: 'Mandatory'  }) %>
     </div>
     <%= f.input :amount_spent_today %>
+    <%= f.input :note %>
   </div>
 
   <div class="form-actions">
