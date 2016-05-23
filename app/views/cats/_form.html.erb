@@ -5,7 +5,7 @@
 
   <div class="form-inputs">
     <%= f.hidden_field :survey_id, :value=>params[:survey_id] %>
-    <%= f.hidden_field :user_id, :value=> @user.id ||=1 %>
+    <%= f.hidden_field :user_id, :value=> @user_id %>
     <%= f.input :before_street %>
     <%= f.input :before_city %>
     <div class="form-group">

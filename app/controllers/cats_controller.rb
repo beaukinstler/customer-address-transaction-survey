@@ -32,7 +32,7 @@ class CatsController < ApplicationController
   def edit
     @survey = Survey.find(params[:survey_id])
     @cat = @survey.cats.find(params[:id])
-    @user = current_user
+    @user_id = @cat.user_id ||= current_user.id
   end
 
   # POST /cats
