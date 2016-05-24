@@ -90,3 +90,6 @@ pickle-email-*.html
 erd.pdf
 
 .byebug_history
+
+# working in a couple different environments
+config/environments/development.rb
