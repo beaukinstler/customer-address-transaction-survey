@@ -23,7 +23,6 @@ class SurveysController < ApplicationController
   # GET /surveys/1.json
   def show
     @cats = @survey.cats.all
-    @user = current_user
   end
 
   # GET /surveys/new
