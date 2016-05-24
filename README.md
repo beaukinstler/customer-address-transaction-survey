@@ -34,12 +34,12 @@ Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.
 
 Getting Started
 ---------------
-The primary purpose for this application is to allow a reletively strict set of questions to be asked
+The primary purpose for this application is to allow a relatively strict set of questions to be asked
 
 This application uses _Devise_ with roles.
 In it's default and current form, a new user can sign up, but do little more than read the _About_ page, and change passwords, or remove
 
-An _admin_ user needs to convert any new users to a role other than the defaut _user_ role for access to the functionality.
+An _admin_ user needs to convert any new users to a role other than the default _user_ role for access to the functionality.
 
 
 
@@ -48,9 +48,9 @@ Documentation and Support
 
 Issues
 -------------
-This is a beta version, mostly as a means to capture a veriy specific question set.
+This is a beta version, mostly as a means to capture a very specific question set.
 
-A more flexible survey model woudl be idea for use by others.  Some models have been created with this vision in mind, but not implemented.
+A more flexible survey model would be idea for use by others.  Some models have been created with this vision in mind, but not implemented.
 
 The primary model is the CAT model.
 
@@ -67,7 +67,7 @@ Credits
 -------
 Beau Kinstler - Developer
 
-[G2G Reasearch Group](www.g2gresearch.com) - Survey Design and Administration Coaching
+[G2G Research Group](www.g2gresearch.com) - Survey Design and Administration Coaching
 
 [RailsApps Project](http://railsapps.github.io/) and [Daniel Kehoe](https://github.com/DanielKehoe)
 
