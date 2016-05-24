@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
-  source: MyString
+  name: Survey1
+  description: Survey_1_Description
+  source: ElectricLadyLand
 
-two:
-  name: MyString
-  description: MyText
-  source: MyString
+# two:
+#   name: MyString
+#   description: MyText
+#   source: MyString

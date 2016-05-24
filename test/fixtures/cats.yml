@@ -1,29 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  before_street: MyString
-  before_city: MyString
-  before_state: MyString
-  before_zip: MyString
+  before_street: "444 East 55th"
+  before_city: "Before Town"
+  before_state: MN
+  before_zip: "55555"
   before_type: 1
-  after_street: MyString
-  after_city: MyString
-  after_state: MyString
-  after_zip: 1
+  after_street: "555 West 66th"
+  after_city: "After Village"
+  after_state: MN
+  after_zip: "55554-6543"
   after_type: 1
-  location_prompting_visit: 1
-  amount_spent_today: 1
+  location_prompting_visit: "Before"
+  amount_spent_today: 10
+  user_id: 1
+  survey_id: 1
 
 two:
-  before_street: MyString
-  before_city: MyString
-  before_state: MyString
-  before_zip: MyString
+  before_street: "444 East 55th"
+  before_city: "Before Town"
+  before_state: MN
+  before_zip: "55555"
   before_type: 1
-  after_street: MyString
-  after_city: MyString
-  after_state: MyString
-  after_zip: 1
+  after_street: "555 West 66th"
+  after_city: "After Village"
+  after_state: MN
+  after_zip: "55554-6543"
   after_type: 1
-  location_prompting_visit: 1
-  amount_spent_today: 1
+  location_prompting_visit: "Before"
+  amount_spent_today: 10
+  user_id: 2
+  survey_id: 2
