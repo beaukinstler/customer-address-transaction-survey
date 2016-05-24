@@ -49,6 +49,7 @@ Documentation and Support
 Issues
 -------------
 This is a beta version, mostly as a means to capture a veriy specific question set.
+
 A more flexible survey model woudl be idea for use by others.  Some models have been created with this vision in mind, but not implemented.
 
 The primary model is the CAT model.
@@ -65,7 +66,9 @@ Open to all contribution.
 Credits
 -------
 Beau Kinstler - Developer
+
 [G2G Reasearch Group](www.g2gresearch.com) - Survey Design and Administration Coaching
+
 [RailsApps Project](http://railsapps.github.io/) and [Daniel Kehoe](https://github.com/DanielKehoe)
 
 
