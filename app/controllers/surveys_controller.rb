@@ -22,7 +22,8 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
-    @cats = @survey.cats.all
+    @search = @survey.cats.ransack(params[:q])
+    @cats = @search.result.order(id: :desc)
   end
 
   # GET /surveys/new

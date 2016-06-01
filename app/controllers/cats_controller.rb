@@ -2,12 +2,15 @@ class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :check_role
+  # before_filter :set_search, only: [:index]
 
   # GET /cats
   # GET /cats.json
   def index
     @survey = Survey.find(params[:survey_id])
-    @cats = @survey.cats.all
+    # @cats = @survey.cats.all
+    @search = @survey.cats.ransack(params[:q])
+    @cats = @search.result
     respond_to do |format|
       format.html
       format.csv { send_data @cats.to_csv }

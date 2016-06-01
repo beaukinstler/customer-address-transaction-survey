@@ -1,19 +1,35 @@
+<p>
+</p>
+
+<%= search_form_for(@search ,url: survey_path(@survey), method: :get) do |f| %>
+  <div class="field">
+    <%= f.label :before_street_or_after_street_or_before_zip_or_after_zip_or_note_cont, "Streets, zips or note contains:" %>
+    <%= f.text_field :before_street_or_after_street_or_before_zip_or_after_zip_or_note_cont %>
+  </div>
+  <div>
+    <%= f.submit "Search" %>
+    <%= link_to 'Clear search', survey_path(@survey) %>
+  </div>
+<% end %>
+
+<p></p>
+
 <table class="table table-bordered table-striped">
   <thead>
-    <p>
-      Download:
+    <h4 class=box>
+      Download (Search filter doesn't apply to exports):<br />
       <%= link_to "CSV", survey_cats_path(@survey,format: "csv") %> |
       <%= link_to "Excel", survey_cats_path(@survey,format: "xls") %>
-    </p>
+    </h4>
     <p>
       <%= link_to 'New CAT entry', new_survey_cat_path(@survey) %>
     </p>
     <tr>
-      <th>ID</th>
+      <th><%= sort_link(@search, :id, 'ID', default_order: :asc) %></th>
       <th>Before street</th>
       <th>Before city</th>
       <th>Before state</th>
-      <th>Before zip</th>
+      <th><%= sort_link(@search, :before_zip, 'Before zip', default_order: :asc) %></th>
       <th>Before type</th>
       <th>After street</th>
       <th>After city</th>
