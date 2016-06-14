@@ -1,7 +1,26 @@
 <!--<p id="notice"><%= notice %></p>-->
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <%= render '/surveys/survey_details' %>
+  </div>
+  <div  style="float:right;padding:8px">
+        <%= search_form_for(@search ,url: survey_cats_path(@survey), method: :get) do |f| %>
+          <div class="field">
+            <%= f.label :before_street_or_after_street_or_before_zip_or_after_zip_or_note_cont, "Streets, zips or note contains:" %>
+            <%= f.text_field :before_street_or_after_street_or_before_zip_or_after_zip_or_note_cont %>
+          </div>
+          <div style="float:right;text-align:right">
+            <%= f.submit "Search" %>
+            <%= link_to 'Clear search', survey_cats_path(@survey) %>
+            <br />
+            (Search filter doesn't apply to export files)
+          </div>
+        <% end %>
+    </div>
+</div>
 
-
-<%= render '/surveys/survey_cats' %>
+<%= render 'survey_cats' %>
 
 <!--<h1>Listing Cats</h1>-->
 <!--<table>-->

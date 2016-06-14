@@ -1,0 +1,66 @@
+<p>
+</p>
+
+
+
+<p></p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <div class="col-sm-3">
+      [<%= link_to 'New CAT entry', new_survey_cat_path(@survey) %>]
+    </div>
+    <div class="col-sm-9" style="text-align:right">
+      Download |
+      <%= link_to "CSV", survey_cats_path(@survey,format: "csv") %> |
+      <%= link_to "Excel", survey_cats_path(@survey,format: "xls") %> |
+    <div>
+    <tr>
+      <th><%= sort_link(@search, :id, 'ID', default_order: :asc) %></th>
+      <th>Before street</th>
+      <th>Before city</th>
+      <th>Before state</th>
+      <th><%= sort_link(@search, :before_zip, 'Before zip', default_order: :asc) %></th>
+      <th>Before type</th>
+      <th>After street</th>
+      <th>After city</th>
+      <th>After state</th>
+      <th>After zip</th>
+      <th>After type</th>
+      <th>Location prompting visit</th>
+      <th>Amount spent today</th>
+      <th>Creator</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cats.each do |cat| %>
+      <tr>
+        <td><%= cat.id %></td>
+        <td><%= cat.before_street %></td>
+        <td><%= cat.before_city %></td>
+        <td><%= cat.before_state %></td>
+        <td><%= cat.before_zip %></td>
+        <td><%= cat.before_type.description %></td>
+        <td><%= cat.after_street %></td>
+        <td><%= cat.after_city %></td>
+        <td><%= cat.after_state %></td>
+        <td><%= cat.after_zip %></td>
+        <td><%= cat.after_type.description %></td>
+        <td><%= cat.location_prompting_visit %></td>
+        <td><%= cat.amount_spent_today %></td>
+        <td><%= cat.user.email %></td>
+        <td><%= cat.note %></td>
+        <td><%= link_to 'Show', survey_cat_path(cat.survey_id,cat.id)%> </td>
+        <td><%= link_to 'Edit', edit_survey_cat_path(cat.survey_id,cat.id)%></td>
+        <td><%= link_to 'Destroy', survey_cat_path(cat.survey_id,cat.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+[<%= link_to 'New CAT entry', new_survey_cat_path(@survey) %>]

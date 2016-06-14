@@ -1,22 +1,7 @@
 <!--<p id="notice"><%= notice %></p>-->
 
 <p>
-  <strong>Name:</strong>
-  <%= @survey.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @survey.description %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @survey.source %>
-</p>
-
-<p>
-  <%= render 'survey_cats', search: @search %>
+  <%= render 'cats_list'%>
 </p>
 
 <% if current_user.admin? %>

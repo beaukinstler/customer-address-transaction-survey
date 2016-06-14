@@ -26,12 +26,4 @@ class Cat < ActiveRecord::Base
         end
       end
     end
-
-    private
-
-        def validate_card
-            unless credit_card.valid?
-                errors.add(:credit_card,  "your message")
-            end
-        end
 end

@@ -8,7 +8,6 @@ class CatsController < ApplicationController
   # GET /cats.json
   def index
     @survey = Survey.find(params[:survey_id])
-    # @cats = @survey.cats.all
     @search = @survey.cats.ransack(params[:q])
     @cats = @search.result
     respond_to do |format|
@@ -46,7 +45,7 @@ class CatsController < ApplicationController
     @cat.user_id = current_user.id
     respond_to do |format|
       if @cat.save
-        format.html { redirect_to new_survey_cat_path(@survey), notice: 'Cat was successfully created.' }
+        format.html { redirect_to  survey_cats_path(@survey), notice: 'Cat was successfully created.' }
         format.json { render :show, status: :created, location: @cat }
       else
         format.html { render :new }
@@ -64,7 +63,7 @@ class CatsController < ApplicationController
     # debugger
     respond_to do |format|
       if @cat.update(cat_params)
-        format.html { redirect_to survey_path(@survey), notice: 'CAT was successfully updated.' }
+        format.html { redirect_to  survey_cats_path(@survey), notice: 'CAT was successfully updated.' }
         format.json { render :show, status: :ok, location: @cat }
       else
         format.html { render :edit }

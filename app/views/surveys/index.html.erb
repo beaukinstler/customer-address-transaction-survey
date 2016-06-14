@@ -23,7 +23,7 @@
   <tbody>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><%= link_to survey.name, survey %></td>
+        <td><%= link_to survey.name,  survey_cats_path(survey.id)  %></td>
         <td><%= survey.description %></td>
         <td><%= survey.source %></td>
         <% if @user.admin? %>

@@ -1,29 +1,19 @@
-<p>
-</p>
+<br>
 
-<%= search_form_for(@search ,url: survey_path(@survey), method: :get) do |f| %>
-  <div class="field">
-    <%= f.label :before_street_or_after_street_or_before_zip_or_after_zip_or_note_cont, "Streets, zips or note contains:" %>
-    <%= f.text_field :before_street_or_after_street_or_before_zip_or_after_zip_or_note_cont %>
-  </div>
-  <div>
-    <%= f.submit "Search" %>
-    <%= link_to 'Clear search', survey_path(@survey) %>
-  </div>
-<% end %>
+<%= render 'survey_details' %>
 
 <p></p>
 
 <table class="table table-bordered table-striped">
   <thead>
-    <h4 class=box>
-      Download (Search filter doesn't apply to exports):<br />
+    <div class="col-sm-3">
+      List of CAT surveys
+    </div>
+    <div class="col-sm-9" style="text-align:right">
+      Download |
       <%= link_to "CSV", survey_cats_path(@survey,format: "csv") %> |
-      <%= link_to "Excel", survey_cats_path(@survey,format: "xls") %>
-    </h4>
-    <p>
-      <%= link_to 'New CAT entry', new_survey_cat_path(@survey) %>
-    </p>
+      <%= link_to "Excel", survey_cats_path(@survey,format: "xls") %> |
+    <div>
     <tr>
       <th><%= sort_link(@search, :id, 'ID', default_order: :asc) %></th>
       <th>Before street</th>
@@ -71,5 +61,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New CAT entry', new_survey_cat_path(@survey) %>
